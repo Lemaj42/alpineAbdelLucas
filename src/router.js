@@ -1,22 +1,22 @@
-import { Link, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Link, NavLink, RouterProvider, createBrowserRouter } from "react-router-dom";
 import Test from "./test/test";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <div>page dacceuil
-                    <nav>
-                        <Link to={"/config"}>config</Link>
-                    </nav>
-                </div>
+            <nav>
+                <Link to={"/config"}>config</Link>
+            </nav>
+        </div>
     },
     {
         path: "/config",
         element: <div>page de configuration
-                <Test></Test>
+            <Test></Test>
             <nav>
-                        <Link to={"/"}>accueil</Link>
-                    </nav>
+                <Link to={"/"}>accueil</Link>
+            </nav>
         </div>
     }
 ])
