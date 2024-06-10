@@ -1,28 +1,29 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Configurators from "./Pages/Configurators";
 import Accueil from "./Pages/Accueil";
 import NavBar from "./Pages/NavBar";
+
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <div>
+        element: <>
             <NavBar>
             </NavBar>
 
             <Accueil>
             </Accueil>
-        </div>
+        </>
+
     },
     {
         path: "/Configurators",
-        element: <div>
+        element: <>
             <NavBar>
             </NavBar>
 
-            <Configurators>
-            </Configurators>
-        </div>
+            <Accueil>
+            </Accueil>
+        </>
     }
 ])
 
