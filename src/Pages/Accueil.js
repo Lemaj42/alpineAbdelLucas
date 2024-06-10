@@ -1,16 +1,19 @@
 import React from "react";
-import "./CSS/Accueil.css";
 
-
-
+import History from "./Histoire";
+import Header from "./header";
 
 function Accueil() {
     return <>
-        <section>
-            Page d'accueil
-            <section>
-                Histoire
-            </section>
+        <section className="mt-5">
+            <div className="d-flex justify-content-center">
+                <Header />
+            </div>
+
+            <History />
+            <div> dimansion </div>
+            <div> Loreojz rgpoi zetoi zaron,g^rkgùpngo t^p gùoe obùeigo lk g </div>
+            <div> fin </div>
         </section>
 
     </>

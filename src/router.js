@@ -6,24 +6,17 @@ import NavBar from "./Pages/NavBar";
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <>
-            <NavBar>
-            </NavBar>
-
-            <Accueil>
-            </Accueil>
-        </>
-
+        element: <div>
+            <NavBar />
+            <Accueil />
+        </div>
     },
     {
         path: "/Configurators",
-        element: <>
-            <NavBar>
-            </NavBar>
-
-            <Accueil>
-            </Accueil>
-        </>
+        element: <div>
+            <NavBar />
+            <Configurators />
+        </div>
     }
 ])
 
