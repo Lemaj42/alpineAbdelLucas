@@ -7,21 +7,15 @@ const router = createBrowserRouter([
     {
         path: "/",
         element: <div>
-            <NavBar>
-            </NavBar>
-
-            <Accueil>
-            </Accueil>
+            <NavBar />
+            <Accueil />
         </div>
     },
     {
         path: "/Configurators",
         element: <div>
-            <NavBar>
-            </NavBar>
-
-            <Configurators>
-            </Configurators>
+            <NavBar />
+            <Configurators />
         </div>
     }
 ])
