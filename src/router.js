@@ -1,22 +1,27 @@
-import { Link, NavLink, RouterProvider, createBrowserRouter } from "react-router-dom";
-import Test from "./test/test";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Configurators from "./Pages/Configurators";
+import Accueil from "./Pages/Accueil";
+import NavBar from "./Pages/NavBar";
 
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <div>page dacceuil
-            <nav>
-                <Link to={"/config"}>config</Link>
-            </nav>
+        element: <div>
+            <NavBar>
+            </NavBar>
+
+            <Accueil>
+            </Accueil>
         </div>
     },
     {
-        path: "/config",
-        element: <div>page de configuration
-            <Test></Test>
-            <nav>
-                <Link to={"/"}>accueil</Link>
-            </nav>
+        path: "/Configurators",
+        element: <div>
+            <NavBar>
+            </NavBar>
+
+            <Configurators>
+            </Configurators>
         </div>
     }
 ])
