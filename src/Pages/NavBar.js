@@ -15,7 +15,7 @@ function NavBar() {
 
             </Nav.Item>
             <Nav.Item>
-                <NavLink className="ColorText" to={"/"}>Accueil</NavLink>
+                <NavLink className="ColorText mx-5" to={"/"}>Accueil</NavLink>
             </Nav.Item>
             <Nav.Item>
                 {location.pathname !== "/Configurators" && (
