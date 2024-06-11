@@ -9,8 +9,8 @@ function Footer() {
             <footer className="BgSection1 bg-body-tertiary text-center">
                 <div className="container p-4">
 
-                    <section className="LogoFooter mb-4">
-                        <h1 className="mb-5">
+                    <section className="LogoFooter mb-5">
+                        <h1>
                             UNE MARQUE AVEC DES VALEURS
                         </h1>
                     </section>
