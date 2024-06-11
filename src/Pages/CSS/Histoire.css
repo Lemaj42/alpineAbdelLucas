@@ -1,5 +1,7 @@
 .BgSection {
-    background: #fff;
+    background: #fff !important;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 .BgSection img {

@@ -4,6 +4,8 @@
 }
 
 .navbar {
+    width: 100%;
+    overflow-x: hidden;
     justify-content: center;
     align-items: center !important;
 }

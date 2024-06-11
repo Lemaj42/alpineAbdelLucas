@@ -1,0 +1,23 @@
+.LogoFooter {
+    justify-content: center;
+    height: 4px;
+    padding: 1.5rem !important;
+    color: #005A9C;
+    font-weight: bold;
+}
+
+.text1 {
+    color: #0866FF
+}
+
+.text2 {
+    color: #FF0000
+}
+
+.text3 {
+    color: #fff
+}
+
+.BgSection1 {
+    background: #040404 !important;
+}
