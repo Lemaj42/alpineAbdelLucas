@@ -1,0 +1,37 @@
+.BgSection {
+    background: #fff;
+}
+
+.BgSection img {
+    aspect-ratio: 2/1;
+}
+
+.imgHis {
+    background-image: url(../../assetes/images/Histoire/AlpineHistoire.jpg);
+    height: 50vh;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 0em -11em;
+}
+
+.imgCar {
+    max-height: 300px;
+}
+
+.h2Tittre {
+    color: #005A9C;
+    text-align: center;
+    font-weight: bold;
+}
+
+.h3his {
+    color: #005A9C;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.CarouHis {
+    margin-block-end: 20px;
+    margin-top: 20px;
+}

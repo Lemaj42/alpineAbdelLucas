@@ -1,31 +1,32 @@
 import React from "react";
 import Carousel from 'react-bootstrap/Carousel';
 import './CSS/header.css'
+import AlpineA110 from '../assetes/images/headerIMG/Alpine-A110-1.jpg';
+import logoHeader from '../assetes/images/headerIMG/logoHeader.jpg';
+import A110GT from '../assetes/images/headerIMG/Alpine_A110_GT_-_34-AR.jpg';
 
 function Header() {
 
     return (
         <Carousel>
             <Carousel.Item>
-                <img className="imgNav" src="/headerIMG/Alpine-A110-1.jpg" alt="photo1"/>
+                <img className="imgNav" src={AlpineA110} alt="AlpineA110" />
                 <Carousel.Caption>
-                    <h3>First slide label</h3>
-                    <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                    <h3>Alpine A110</h3>
+                    <p>L'esprit originel</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-                <img className="imgNav" src="/headerIMG/logoHeader.jpg" />
+                <img className="imgNav" src={logoHeader} alt="logoHeader" />
                 <Carousel.Caption>
-                    <h3>Second slide label</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 </Carousel.Caption>
             </Carousel.Item>
             <Carousel.Item>
-                <img className="imgNav" src="/headerIMG/Alpine_A110_GT_-_34-AR.jpg" />
+                <img className="imgNav" src={A110GT} alt="A110GT" />
                 <Carousel.Caption>
-                    <h3>Third slide label</h3>
+                    <h3>Alpine A110 GT</h3>
                     <p>
-                        Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+                        Le grand toursme Alpine
                     </p>
                 </Carousel.Caption>
             </Carousel.Item>
