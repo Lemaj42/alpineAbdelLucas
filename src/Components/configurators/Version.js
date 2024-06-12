@@ -16,18 +16,18 @@ import Legend4 from '../../assetes/images/configurateur/modele/legende/modele_le
 function SelectVersion() {
 
     const dispatch = useDispatch()
-    const voiture = useSelector(state => state.CarConfig.cars)
+    const voiture = useSelector(state => state.CarConfig.version)
     const Mycar = useSelector(state => state.CarConfig.Mycar)
 
     const SelectLegend = () => {
-        dispatch(SelectModel({model: voiture[1].name}))
+        dispatch(SelectModel({ model: voiture[1].name }))
         console.log(Mycar)
     }
 
     const SelectPure = () => {
-        dispatch(SelectModel({model: voiture[0].name}))
+        dispatch(SelectModel({ model: voiture[0].name }))
         console.log(Mycar)
-        
+
     }
 
 

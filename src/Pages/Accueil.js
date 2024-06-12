@@ -3,8 +3,8 @@ import './CSS/Accueil.css';
 import History from "./History";
 import Header from "./header";
 import videoSrc from '../assetes/videos/210611_A110_X_FelipePantone_Main_Edit_45s-1680x951px.mp4';
-import Pure from "../assetes/images/sources-homepage/versions/ALPINE-PURE-1.png";
-import Legende from "../assetes/images/sources-homepage/versions/ALPINE-LEGENDE-1.png";
+import Pure from "../assetes/images/sources-homepage/versions/ALPINE-PURE-1.png"
+import Legende from "../assetes/images/sources-homepage/versions/ALPINE-LEGENDE-1.png"
 
 function Accueil() {
     return (
@@ -44,5 +44,4 @@ function Accueil() {
         </>
     );
 }
-
-export default Accueil;
+export default Accueil
