@@ -3,17 +3,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { Test } from "../features/configuratorSclice";
 import "./CSS/configurator.css"
 import { Button } from "react-bootstrap";
-import SelectColor from "../Components/configurators/Couleurs";
+import SelectVersion from "../Components/configurators/Version";
 
 
 function Configurators() {
 
     const dispatch = useDispatch()
-    const voiture = useSelector(state => state.CarConfig)
+    const voiture = useSelector(state => state.CarConfig.MyCar)
+    console.log(voiture)
 
     const loadState = () => {
 
-        console.log(voiture)
         dispatch(Test())
     }
 
@@ -21,7 +21,7 @@ function Configurators() {
     return (
         <>
             <section id="configuration">
-                <SelectColor />
+                <SelectVersion />
             </section>
         </>
     )
