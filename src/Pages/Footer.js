@@ -62,7 +62,9 @@ function Footer() {
                                         <a className="text3" target="_blank" rel="noreferrer" href="https://x.com/AlpineF1Team?s=20&t=HaDDdmh5jRqowXRevmR_aQ">X</a>
                                     </li>
                                     <li>
-                                        <a className="text3" target="_blank" rel="noreferrer" href="https://www.instagram.com/alpinecars/?hl=fr">Instagram</a>
+                                        <a href="https://www.instagram.com/alpinecars/?hl=fr" target="_blank" rel="noreferrer">
+                                            <img src={Insta} alt="Logo" style={{ width: "40px" }} />
+                                        </a>
                                     </li>
                                     <li>
                                         <a className="text2" target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UCzH4Iwlm8kI09wXbgHvFfIg">Youtube</a>
