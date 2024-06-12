@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import "./CSS/configurator.css";
 import { Button } from "react-bootstrap";
 import SelectVersion from "../Components/configurators/Version";
-import SelectColor from '../Components/configurators/Couleurs';
+import ColorChange from '../Components/configurators/Couleurs';
 
 
 function Configurators() {
@@ -24,11 +24,11 @@ function Configurators() {
         <>
             <section id="configuration">
                 {pageIndex === 0 && <SelectVersion />}
-                {pageIndex === 1 && <SelectColor />}
-                
+                {pageIndex === 1 && <ColorChange />}
+
                 <Button onClick={changePage}>Passez à l'étape suivante</Button>
 
-                 </section>
+            </section>
         </>
     );
 }
