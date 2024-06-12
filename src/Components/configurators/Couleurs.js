@@ -18,10 +18,10 @@ import LegendeNoir2 from '../../assetes/images/configurateur/modele/legende/mode
 import LegendeNoir3 from '../../assetes/images/configurateur/modele/legende/modele_legende-couleur_noir-jante_legende-3.jpg';
 import LegendeNoir4 from '../../assetes/images/configurateur/modele/legende/modele_legende-couleur_noir-jante_legende-4.jpg';
 
-function SelectColor() {
+function ColorChange() {
     const dispatch = useDispatch();
     const selectedModel = useSelector(state => state.CarConfig.MyCar.version);
-    const selectedColor = useSelector(state => state.CarConfig.MyCar.color);
+    const changeColor = useSelector(state => state.CarConfig.MyCar.color);
 
     const colorImages = {
         'Blanc Opaque': [LegendeBlanc1, LegendeBlanc2, LegendeBlanc3, LegendeBlanc4],
@@ -41,13 +41,13 @@ function SelectColor() {
                     <Button onClick={() => handleColorSelect('Bleu Alpine')}>Select Bleu</Button>
                     <Button onClick={() => handleColorSelect('Noir Profond')}>Select Noir</Button>
                 </div>
-                {selectedModel && selectedColor && (
+                {selectedModel && changeColor && (
                     <Carousel fade>
-                        {colorImages[selectedColor].map((image, index) => (
+                        {colorImages[ColorChange].map((image, index) => (
                             <Carousel.Item key={index}>
-                                <img src={image} alt={`${selectedModel} ${selectedColor} ${index + 1}`} />
+                                <img src={image} alt={`${selectedModel} ${ColorChange} ${index + 1}`} />
                                 <Carousel.Caption>
-                                    <h3>{`${selectedModel} - ${selectedColor}`}</h3>
+                                    <h3>{`${selectedModel} - ${ColorChange}`}</h3>
                                 </Carousel.Caption>
                             </Carousel.Item>
                         ))}
