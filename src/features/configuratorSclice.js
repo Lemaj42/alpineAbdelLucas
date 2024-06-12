@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { version } from "react";
 
 const initialState = {
     MyCar: {
