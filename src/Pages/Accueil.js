@@ -29,6 +29,21 @@ function Accueil() {
                         </div>
                     </div>
                 </div>
+                <h2 id="demo08">8. Gray Scale</h2>
+                <div class="hover08 column">
+                    <div>
+                        <figure><img src="https://picsum.photos/300/200?image=244" /></figure>
+                        <span>Hover</span>
+                    </div>
+                    <div>
+                        <figure><img src="https://picsum.photos/300/200?image=1024" /></figure>
+                        <span>Hover</span>
+                    </div>
+                    <div>
+                        <figure><img src="https://picsum.photos/300/200?image=611" /></figure>
+                        <span>Hover</span>
+                    </div>
+                </div>
             </section>
             <section className="video-section">
                 <div className="video-container">
