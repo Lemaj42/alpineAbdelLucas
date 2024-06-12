@@ -1,6 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+    MyCar: {
+        version: '',
+        color: '',
+        jantes: '',
+        scellerie: '',
+        equipement: [],
+        accessoire: []
+    },
     cars: [
         { name: "Pure", price: 54700 },
         { name: "Legende", price: 58500, legende: true },

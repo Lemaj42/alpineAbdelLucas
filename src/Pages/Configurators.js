@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { Test } from "../features/configuratorSclice";
 import "./CSS/configurator.css"
 import { Button } from "react-bootstrap";
+import SelectColor from "../Components/configurators/Couleurs";
 
 
 function Configurators() {
@@ -20,7 +21,7 @@ function Configurators() {
     return (
         <>
             <section id="configuration">
-
+                <SelectColor />
             </section>
         </>
     )
