@@ -30,8 +30,10 @@ function Configurators() {
                 {pageIndex === 0 && <SelectVersion />}
                 {pageIndex === 1 && <ColorChange />}
 
+                
                 <Button onClick={changePageMoins}>Passez à l'étape Précedente</Button>
                 <Button onClick={changePagePlus}>Passez à l'étape suivante</Button>
+
 
             </section>
         </>
