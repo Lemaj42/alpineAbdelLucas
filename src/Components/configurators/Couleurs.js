@@ -1,4 +1,3 @@
-import Reac from "react";
 import { useSelector } from "react-redux";
 import { Button } from "react-bootstrap";
 
