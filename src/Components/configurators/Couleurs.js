@@ -18,7 +18,7 @@ import LegendeNoir2 from '../../assetes/images/configurateur/modele/legende/mode
 import LegendeNoir3 from '../../assetes/images/configurateur/modele/legende/modele_legende-couleur_noir-jante_legende-3.jpg';
 import LegendeNoir4 from '../../assetes/images/configurateur/modele/legende/modele_legende-couleur_noir-jante_legende-4.jpg';
 
-function ColorChange() {
+function olorChange() {
     const dispatch = useDispatch();
     const selectedModel = useSelector(state => state.CarConfig.MyCar.version);
     const changeColor = useSelector(state => state.CarConfig.MyCar.color);
