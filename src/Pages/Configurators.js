@@ -1,8 +1,9 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch, useSelector, } from "react-redux";
 import { Test } from "../features/configuratorSclice";
 import "./CSS/configurator.css"
 import { Button } from "react-bootstrap";
+
 import SelectVersion from "../Components/configurators/Version";
 
 

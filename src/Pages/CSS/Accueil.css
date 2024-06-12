@@ -1,7 +1,19 @@
-body {
+.Modele {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    background-color: #282c34;
+    background-color: #005A9C;
     color: white;
+}
+
+.hover08 figure img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.hover08 figure:hover img {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
 }

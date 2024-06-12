@@ -2,9 +2,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Button } from "react-bootstrap";
 
-function SelectJante() {
+function SelectScellerie() {
 
-    const voiture = useSelector(state => state.CarConfig.jantes)
+    const voiture = useSelector(state => state.CarConfig.scelleries)
 
     const loadState = () => {
 
@@ -14,9 +14,9 @@ function SelectJante() {
     return (
         <>
             <section id="configuration">
-                <Button onClick={loadState}> view jante </Button>
+                <Button onClick={loadState}> view scelleries </Button>
             </section>
         </>
     )
 };
-export default SelectJante
+export default SelectScellerie
