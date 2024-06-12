@@ -9,7 +9,7 @@ const initialState = {
         equipement: [],
         accessoire: []
     },
-    cars: [
+    version: [
         { name: "Pure", price: 54700 },
         { name: "Legende", price: 58500, legende: true },
     ],
@@ -24,10 +24,10 @@ const initialState = {
         { name: "Legende", price: 1000, legende: true },
     ],
     scelleries: [
-        { name: "Sièges baquets en cuir noir et Dinamica", legende: false },
-        { name: "Sièges Confort en cuir noir perforé", legende: false },
-        { name: "Sièges Confort en cuir noir", legende: true },
-        { name: "Sièges Confort en cuir brun", legende: true },
+        { name: "Sièges baquets en cuir noir et Dinamica", price: 0, legende: false },
+        { name: "Sièges Confort en cuir noir perforé", price: 800, legende: false },
+        { name: "Sièges Confort en cuir noir", price: 0, legende: true },
+        { name: "Sièges Confort en cuir brun", price: 800, legende: true },
     ],
 };
 

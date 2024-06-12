@@ -1,7 +1,9 @@
+
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import "./CSS/configurator.css";
 import { Button } from "react-bootstrap";
+
 import SelectVersion from "../Components/configurators/Version";
 import SelectColor from '../Components/configurators/Couleurs';
 
