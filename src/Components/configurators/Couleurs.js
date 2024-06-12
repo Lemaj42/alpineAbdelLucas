@@ -13,6 +13,7 @@ function SelectColor() {
     return (
         <>
             <section id="configuration">
+                CECI EST LA PAGE COULEUR 
                 <Button onClick={loadState}> view color </Button>
             </section>
         </>
