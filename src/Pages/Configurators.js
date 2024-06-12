@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import "./CSS/configurator.css";
@@ -10,14 +8,20 @@ import ColorChange from '../Components/configurators/Couleurs';
 
 function Configurators() {
     const voiture = useSelector(state => state.CarConfig.MyCar);
-    console.log(voiture);
 
     const [pageIndex, setPageIndex] = useState(0);
 
 
-    const changePage = () => {
+    const changePagePlus = () => {
         setPageIndex(prevIndex => prevIndex + 1);
+        console.log(voiture);
         console.log(pageIndex + 1);
+    };
+
+    const changePageMoins = () => {
+        setPageIndex(prevIndex => prevIndex - 1);
+        console.log(voiture);
+        console.log(pageIndex - 1);
     };
 
     return (
@@ -26,7 +30,10 @@ function Configurators() {
                 {pageIndex === 0 && <SelectVersion />}
                 {pageIndex === 1 && <ColorChange />}
 
-                <Button onClick={changePage}>Passez à l'étape suivante</Button>
+                
+                <Button onClick={changePageMoins}>Passez à l'étape Précedente</Button>
+                <Button onClick={changePagePlus}>Passez à l'étape suivante</Button>
+
 
             </section>
         </>

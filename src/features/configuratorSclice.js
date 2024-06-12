@@ -40,7 +40,9 @@ export const configSlice = createSlice({
             let newState = { ...state, MyCar: { ...state.MyCar, version: model } }
             return newState
         },
+        
         SelectColor: (state, action) => {
+
             const { colors } = state.MyCar.version;
             let newState = { ...state, MyCar: { ...state.MyCar, color: colors } }
             return newState

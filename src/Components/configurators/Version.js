@@ -27,7 +27,6 @@ function SelectVersion() {
     const SelectPure = () => {
         dispatch(SelectModel({ model: voiture[0].name }))
         console.log(Mycar)
-
     }
 
 
