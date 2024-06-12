@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { version } from "react";
 
 const initialState = {
     MyCar: {
@@ -42,21 +43,13 @@ export const configSlice = createSlice({
             return newState
         },
 
-        ChangeWheels: (state, action) => {
-            let newState = {
-                ...state,
-                car: {
-                    ...state.car,
-                    roue: action.payload.truc
-                }
+        SelectModel: (state, action) => {
+             let newState = { ...state, Mycar: { ...state.MyCar, version: action.payload.model} }
+             return newState
             }
-
-
-            return newState
-        }
     }
 })
 
-export const { Test } = configSlice.actions
+export const { Test, SelectModel } = configSlice.actions
 
 export default configSlice.reducer
