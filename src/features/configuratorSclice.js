@@ -37,11 +37,12 @@ export const configSlice = createSlice({
     reducers: {
         SelectModel: (state, action) => {
             const { model } = action.payload;
-            let newState = { ...state, Mycar: { ...state.MyCar, version: model } }
+            let newState = { ...state, MyCar: { ...state.MyCar, version: model } }
             return newState
         },
         SelectColor: (state, action) => {
-            let newState = { ...state, Mycar: { ...state.MyCar, version: action.payload.colors } }
+            const { colors } = state.MyCar.version;
+            let newState = { ...state, MyCar: { ...state.MyCar, color: colors } }
             return newState
         },
     },
