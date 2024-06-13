@@ -1,8 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
+import './couleur.css';
 import { Button } from "react-bootstrap";
 import { SelectColor } from "../../features/configuratorSclice";
 import Carousel from 'react-bootstrap/Carousel';
-import 'bootstrap/dist/css/bootstrap.min.css';  // Assurez-vous que les styles Bootstrap sont importÃ©s
+import 'bootstrap/dist/css/bootstrap.min.css';  // Assurez-vous que les styles Bootstrap sont importés
 import Blanc from '../../assetes/images/configurateur/couleurs/selection/blanc.jpg';
 import Bleu from '../../assetes/images/configurateur/couleurs/selection/bleu.jpg';
 import Noir from '../../assetes/images/configurateur/couleurs/selection/noir.jpg';
@@ -22,7 +23,7 @@ import LegendeNoir4 from '../../assetes/images/configurateur/modele/legende/mode
 function ColorChange() {
     const dispatch = useDispatch();
     const selectedModel = useSelector(state => state.CarConfig.MyCar.version);
-    const changeColor = useSelector(state => state.CarConfig.MyCar.color) || 'Blanc Opaque';  // Default value
+    const changeColor = useSelector(state => state.CarConfig.MyCar.color) || 'Blanc Opaque';  // Valeur par défaut
 
     const colorImages = {
         'Blanc Opaque': [LegendeBlanc1, LegendeBlanc2, LegendeBlanc3, LegendeBlanc4],
@@ -45,6 +46,7 @@ function ColorChange() {
                     <Carousel fade>
                         {colorImages[changeColor].map((image, index) => (
                             <Carousel.Item key={index}>
+                                <h3 className="NomModele">{selectedModel}</h3>
                                 <img src={image} alt={`${selectedModel} ${changeColor} ${index + 1}`} />
                                 <Carousel.Caption>
                                     <h3>{`${selectedModel} - ${changeColor}`}</h3>

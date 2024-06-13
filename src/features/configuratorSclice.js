@@ -4,15 +4,15 @@ const initialState = {
     MyCar: {
         version: '',
         color: '',
-        jantes: '',
+        jantes: 'Standard', // valeur par défaut
         scellerie: '',
         equipement: [],
         accessoire: [],
         pirx: ""
     },
     version: [
-        { name: "Pure", price: 54700 },
-        { name: "Legende", price: 58500, legende: true },
+        { name: "Alpine Pure", price: 54700 },
+        { name: "Alpine Legende", price: 58500, legende: true },
     ],
     colors: [
         { name: "Bleu Alpine", price: 1800 },
@@ -38,19 +38,19 @@ export const configSlice = createSlice({
     reducers: {
         SelectModel: (state, action) => {
             const { model } = action.payload;
-            let newState = { ...state, MyCar: { ...state.MyCar, version: model } }
-            return newState
+            state.MyCar.version = model;
         },
-        
         SelectColor: (state, action) => {
-
-            const { colors } = state.MyCar.version;
-            let newState = { ...state, MyCar: { ...state.MyCar, color: colors } }
-            return newState
+            const { color } = action.payload;
+            state.MyCar.color = color;
+        },
+        SelectJante: (state, action) => {
+            const { jantes } = action.payload;
+            state.MyCar.jantes = jantes;
         },
     },
 });
 
-export const { SelectModel, SelectColor } = configSlice.actions;
+export const { SelectModel, SelectColor, SelectJante } = configSlice.actions;
 
 export default configSlice.reducer;
