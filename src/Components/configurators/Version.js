@@ -17,16 +17,13 @@ function SelectVersion() {
 
     const dispatch = useDispatch()
     const voiture = useSelector(state => state.CarConfig.version)
-    const Mycar = useSelector(state => state.CarConfig.Mycar)
 
     const SelectLegend = () => {
         dispatch(SelectModel({ model: voiture[1].name }))
-        console.log(Mycar)
     }
 
     const SelectPure = () => {
         dispatch(SelectModel({ model: voiture[0].name }))
-        console.log(Mycar)
     }
 
 
@@ -37,7 +34,7 @@ function SelectVersion() {
 
     return (
         <>
-            <section id="configuration">
+            <section className="">
 
 
                 <Carousel fade>

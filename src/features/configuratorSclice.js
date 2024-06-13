@@ -7,7 +7,8 @@ const initialState = {
         jantes: 'Standard', // valeur par défaut
         scellerie: '',
         equipement: [],
-        accessoire: []
+        accessoire: [],
+        pirx: ""
     },
     version: [
         { name: "Alpine Pure", price: 54700 },

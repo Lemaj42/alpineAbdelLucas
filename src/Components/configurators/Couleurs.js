@@ -60,6 +60,7 @@ function ColorChange() {
 
                 <Button onClick={() => handleColorSelect('Blanc Opaque')}>Select Blanc</Button>
                 <img src={Blanc} alt="Blanc Alpine" style={{ width: "10em" }} />
+                
                 <Button onClick={() => handleColorSelect('Bleu Alpine')}>Select Bleu</Button>
                 <img src={Bleu} alt="Bleu Alpine" style={{ width: "10em" }} />
                 <Button onClick={() => handleColorSelect('Noir Profond')}>Select Noir</Button>
