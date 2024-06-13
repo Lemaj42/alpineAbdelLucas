@@ -1,12 +1,13 @@
 import React from "react";
 import './CSS/Accueil.css';
+import { NavLink, useLocation } from "react-router-dom";
 import History from "./History";
 import Header from "./header";
 import videoSrc from '../assetes/videos/210611_A110_X_FelipePantone_Main_Edit_45s-1680x951px.mp4';
-import Pure from "../assetes/images/sources-homepage/versions/ALPINE-PURE-1.png"
-import Legende from "../assetes/images/sources-homepage/versions/ALPINE-LEGENDE-1.png"
-
+import Pure from '../assetes/images/configurateur/modele/selection/pure.png';
 function Accueil() {
+    const location = useLocation();
+
     return (
         <>
             <section>
@@ -17,16 +18,14 @@ function Accueil() {
                 <section className="Modele">
                     <div className="container">
                         <div className="row text-center mt-5 mb-5">
-                            <div className="col-md-6 hover08">
-                                <h1 className="mt-2 mb-5">Configurez votre Alpine Pure</h1>
+                            <div className="col-md-12 hover08">
+                                <h1 className="mt-2 mb-5">Configurez votre Alpine</h1>
                                 <figure>
-                                    <img src={Pure} alt="Pure" style={{ width: "600px" }} />
-                                </figure>
-                            </div>
-                            <div className="col-md-6 hover08">
-                                <h1 className="mt-2 mb-5">Configurez votre Alpine Legende</h1>
-                                <figure>
-                                    <img src={Legende} alt="Legende" style={{ width: "600px" }} />
+                                    {location.pathname !== "/Configurators" && (
+                                        <NavLink to={"/Configurators"}>
+                                            <img src={Pure} alt="legende" style={{ width: "600px" }} />
+                                        </NavLink>
+                                    )}
                                 </figure>
                             </div>
                         </div>

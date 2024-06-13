@@ -24,6 +24,7 @@ function Configurators() {
         console.log(voiture);
         console.log(pageIndex - 1);
     };
+    console.log(voiture);
 
     return (
         <>
@@ -53,7 +54,7 @@ function Configurators() {
                     <p>Roues</p>
                 </div>
             </div>
-            <section id="configuration" className="">
+            <section id="configuration">
 
                 {pageIndex === 0 && <SelectVersion />}
                 {pageIndex === 1 && <ColorChange />}

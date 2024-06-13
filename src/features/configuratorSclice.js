@@ -8,7 +8,7 @@ const initialState = {
         scellerie: '',
         equipement: [],
         accessoire: [],
-        pirx: ""
+        prix: 0
     },
     version: [
         { name: "Alpine Pure", price: 54700 },
@@ -48,9 +48,42 @@ export const configSlice = createSlice({
             const { jantes } = action.payload;
             state.MyCar.jantes = jantes;
         },
-    },
+        AddPrice: (state, action) => {
+            console.log(action.payload.prix);
+            console.log(state.MyCar.prix);
+            let newState = {
+                ...state,
+                MyCar: {
+                    ...state.MyCar,
+                    prix: parseFloat(action.payload.prix) + parseFloat(state.MyCar.prix)
+                }
+            };
+            return newState;
+        },
+        AddPriceColor: (state, action) => {
+            const color = state.colors.find(
+                (color) => color.name === action.payload.color
+            );
+
+            if (color && !isNaN(color.price) && !isNaN(state.MyCar.prix)) {
+                let newState = {
+                    ...state,
+                    MyCar: {
+                        ...state.MyCar,
+                        prix: parseFloat(color.price) + parseFloat(state.MyCar.prix)
+                    }
+                };
+                return newState;
+            } else {
+                // Gérer le cas où les prix ne sont pas des nombres valides
+                console.error("Les prix ne sont pas valides");
+                return state;
+            }
+        }
+
+    }
 });
 
-export const { SelectModel, SelectColor, SelectJante } = configSlice.actions;
+export const { SelectModel, SelectColor, SelectJante, AddPrice, AddPriceColor } = configSlice.actions;
 
 export default configSlice.reducer;
