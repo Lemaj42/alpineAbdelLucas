@@ -20,8 +20,9 @@ import JanteStandardNoir from '../../assetes/images/configurateur/jantes/vues/co
 function Jantes() {
     const dispatch = useDispatch();
     const myModel = useSelector(state => state.CarConfig.MyCar);
+    console.log(myModel);
 
-    const changeJante = myModel.jantes || 'Standard'; // Utilise la jante du modèle actuel ou la valeur par défaut
+    const changeJante = myModel.jantes || 'Standard'; 
 
     const janteImages = {
         'Standard': [JanteStandardBlanc, JanteStandardBleu, JanteStandardNoir],
@@ -29,20 +30,41 @@ function Jantes() {
         'Legende': [JanteLegendeBlanc, JanteLegendeBleu, JanteLegendeNoir],
     };
 
+    let selectedImages = [];
+    switch (myModel.color) {
+        case "Bleu Alpine":
+            selectedImages = {
+                'Standard': [JanteStandardBleu],
+                'Serac': [JanteSeracBleu],
+                'Legende': [JanteLegendeBleu],
+            };
+            break;
+        case "Noir Profond":
+            selectedImages = {
+                'Standard': [JanteStandardNoir],
+                'Serac': [JanteSeracNoir],
+                'Legende': [JanteLegendeNoir],
+            };
+            break;
+        default:
+            selectedImages = {
+                'Standard': [JanteStandardBlanc],
+                'Serac': [JanteSeracBlanc],
+                'Legende': [JanteLegendeBlanc],
+            };
+            break;
+    }
+
     const handleJanteSelect = (jantes) => {
         dispatch(SelectJante({ jantes }));
     };
 
-    console.log("Selected Model:", myModel.version);
-    console.log("Change Jante:", changeJante);
-    console.log("Jante Images:", janteImages[changeJante]);
-
     return (
         <>
             <section id="configuration">
-                {janteImages[changeJante] && janteImages[changeJante].length > 0 ? (
+                {selectedImages[changeJante] && selectedImages[changeJante].length > 0 ? (
                     <Carousel fade>
-                        {janteImages[changeJante].map((image, index) => (
+                        {selectedImages[changeJante].map((image, index) => (
                             <Carousel.Item key={index}>
                                 <h3 className="NomModele">{myModel.version}</h3>
                                 <img src={image} alt={`${myModel.version} ${changeJante} ${index + 1}`} />
