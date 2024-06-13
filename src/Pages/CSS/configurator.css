@@ -7,3 +7,39 @@ body {
 #configuration {
     color: white;
 }
+
+
+.CheckBar {
+    margin-top: 3em;
+    margin-bottom: 3em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row; 
+}
+
+.icon-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.icon-container .line {
+    width: 2px;
+    height: 30px; 
+    background-color: #000000; 
+    margin: 10px 0; 
+}
+
+.fa-xl {
+    font-size: 2em; 
+}
+
+.text {
+    margin-left: 1em;
+}
+
+.text p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}

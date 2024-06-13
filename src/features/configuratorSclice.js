@@ -7,7 +7,8 @@ const initialState = {
         jantes: '',
         scellerie: '',
         equipement: [],
-        accessoire: []
+        accessoire: [],
+        pirx: ""
     },
     version: [
         { name: "Pure", price: 54700 },

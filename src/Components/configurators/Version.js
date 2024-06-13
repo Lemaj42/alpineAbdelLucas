@@ -34,7 +34,7 @@ function SelectVersion() {
 
     return (
         <>
-            <section id="configuration">
+            <section className="">
 
 
                 <Carousel fade>
