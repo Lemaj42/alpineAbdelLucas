@@ -1,8 +1,9 @@
 import { useSelector } from "react-redux";
 import { Button } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { SelectModel } from "../../features/configuratorSclice";
+import { SelectModel, AddPrice } from "../../features/configuratorSclice";
 import Carousel from 'react-bootstrap/Carousel';
+import './version.css';
 import Pure1 from '../../assetes/images/configurateur/modele/pure/modele_pure-couleur_bleu-jante_standard (1).jpg'
 import Pure2 from '../../assetes/images/configurateur/modele/pure/modele_pure-couleur_bleu-jante_standard (2).jpg'
 import Pure3 from '../../assetes/images/configurateur/modele/pure/modele_pure-couleur_bleu-jante_standard (3).jpg'
@@ -12,110 +13,67 @@ import Legend2 from '../../assetes/images/configurateur/modele/legende/modele_le
 import Legend3 from '../../assetes/images/configurateur/modele/legende/modele_legende-couleur_bleu-jante_legende-3.jpg'
 import Legend4 from '../../assetes/images/configurateur/modele/legende/modele_legende-couleur_bleu-jante_legende-4.jpg'
 
-
 function SelectVersion() {
+    const dispatch = useDispatch();
+    const voiture = useSelector((state) => state.CarConfig.version);
 
-    const dispatch = useDispatch()
-    const voiture = useSelector(state => state.CarConfig.version)
+    const selectLegend = () => {
+        dispatch(SelectModel({ model: voiture[1].name }));
+        dispatch(AddPrice({ prix: voiture[1].price }));
 
-    const SelectLegend = () => {
-        dispatch(SelectModel({ model: voiture[1].name }))
-    }
+    };
 
-    const SelectPure = () => {
-        dispatch(SelectModel({ model: voiture[0].name }))
-    }
+    const selectPure = () => {
+        dispatch(SelectModel({ model: voiture[0].name }));
+        dispatch(AddPrice({ prix: voiture[0].price }));
 
+    };
 
-    const loadState = () => {
+    console.log(voiture);
 
-        console.log(voiture)
-    }
 
     return (
-        <>
-            <section className="">
+        <section className="d-flex">
+            <div className="col-6">
+                <h3 className="NomModele">{voiture[0].name} {voiture[0].price} €</h3>
 
 
-                <Carousel fade>
-                    <Carousel.Item>
-                        <img src={Pure1} />
-                        <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img src={Pure2} />
-                        <Carousel.Caption>
-                            <h3>Second slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img src={Pure3} />
-                        <Carousel.Caption>
-                            <h3>Third slide label</h3>
-                            <p>
-                                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                            </p>
-                        </Carousel.Caption>
-                    </Carousel.Item><Carousel.Item>
-                        <img src={Pure4} />
-                        <Carousel.Caption>
-                            <h3>Third slide label</h3>
-                            <p>
-                                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                            </p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
+                <Carousel fade className="caroussel">
+
+                    {[Pure1, Pure2, Pure3, Pure4].map((imgSrc, index) => (
+                        <Carousel.Item key={index}>
+                            <img src={imgSrc} alt={`Pure Model Slide ${index + 1}`} height={'600px'} />
+                            <Carousel.Caption>
+                                <h3>{`Slide ${index + 1}`}</h3>
+                                <p>Some placeholder text for slide {index + 1}.</p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                    ))}
                 </Carousel>
+                <div>
+                    <h3>Pure</h3>
+                </div>
+                <Button onClick={() => { selectPure(); AddPrice() }}>Select Pure</Button>
+            </div>
+            <div className="col-6">
+                <h3 className="NomModele">{voiture[1].name} {voiture[1].price} €</h3>
 
-                <Button onClick={SelectPure}> Select Pure </Button>
 
-
-                <Carousel fade>
-                    <Carousel.Item>
-                        <img src={Legend1} />
-                        <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img src={Legend2} />
-                        <Carousel.Caption>
-                            <h3>Second slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img src={Legend3} />
-                        <Carousel.Caption>
-                            <h3>Third slide label</h3>
-                            <p>
-                                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                            </p>
-                        </Carousel.Caption>
-                    </Carousel.Item><Carousel.Item>
-                        <img src={Legend4} />
-                        <Carousel.Caption>
-                            <h3>Third slide label</h3>
-                            <p>
-                                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-                            </p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
+                <Carousel fade className="caroussel">
+                    {[Legend1, Legend2, Legend3, Legend4].map((imgSrc, index) => (
+                        <Carousel.Item key={index}>
+                            <img src={imgSrc} alt={`Legend Model Slide ${index + 1}`} height={'600px'} />
+                            <Carousel.Caption>
+                                <h3>{`Slide ${index + 1}`}</h3>
+                                <p>Some placeholder text for slide {index + 1}.</p>
+                            </Carousel.Caption>
+                        </Carousel.Item>
+                    ))}
                 </Carousel>
+                <Button onClick={() => { selectLegend(); AddPrice() }}>Select Legend</Button>
+            </div>
+        </section>
+    );
+}
 
-                <Button onClick={SelectLegend}> Select Legend </Button>
-
-
-                <Button onClick={loadState}> view version </Button>
-
-
-            </section>
-        </>
-    )
-};
-export default SelectVersion
+export default SelectVersion;

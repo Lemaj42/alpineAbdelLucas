@@ -22,7 +22,7 @@ function Jantes() {
     const myModel = useSelector(state => state.CarConfig.MyCar);
     console.log(myModel);
 
-    const changeJante = myModel.jantes || 'Standard'; 
+    const changeJante = myModel.jantes || 'Standard';
 
     const janteImages = {
         'Standard': [JanteStandardBlanc, JanteStandardBleu, JanteStandardNoir],
@@ -63,29 +63,27 @@ function Jantes() {
         <>
             <section id="configuration">
                 {selectedImages[changeJante] && selectedImages[changeJante].length > 0 ? (
-                    <Carousel fade>
+                    <div>
                         {selectedImages[changeJante].map((image, index) => (
-                            <Carousel.Item key={index}>
+                            <div key={index}>
                                 <h3 className="NomModele">{myModel.version}</h3>
                                 <img src={image} alt={`${myModel.version} ${changeJante} ${index + 1}`} />
-                                <Carousel.Caption>
-                                    <h3>{`${myModel.version} - ${changeJante}`}</h3>
-                                </Carousel.Caption>
-                            </Carousel.Item>
+                                <h3>{`${myModel.version} - ${changeJante}`}</h3>
+                            </div>
                         ))}
-                    </Carousel>
+                    </div>
                 ) : (
                     <p>Aucune image disponible pour cette couleur.</p>
                 )}
-            </section>
+            </section >
             <section id="selection">
                 <h2>Choisissez vos jantes</h2>
-                <div className="selection">
-                    <Button variant="outline-light" onClick={() => handleJanteSelect('Standard')}>Jante Standard</Button>
+                <div className="selection" style={{ color: 'black' }}>
+                    <Button variant="outline-light" onClick={() => handleJanteSelect('Standard')} style={{ backgroundColor: "#005A9C" }}>Jante Standard</Button>
                     <img src={JanteStandard} alt="Jante Standard" style={{ width: "10em" }} />
-                    <Button variant="outline-light" onClick={() => handleJanteSelect('Serac')}>Jante Serac</Button>
+                    <Button variant="outline-light" onClick={() => handleJanteSelect('Serac')} style={{ backgroundColor: "#005A9C" }}>Jante Serac</Button>
                     <img src={JanteSerac} alt="Jante Serac" style={{ width: "10em" }} />
-                    <Button variant="outline-light" onClick={() => handleJanteSelect('Legende')}>Jante Legende</Button>
+                    <Button variant="outline-light" onClick={() => handleJanteSelect('Legende')} style={{ backgroundColor: "#005A9C" }}>Jante Legende</Button>
                     <img src={JanteLegende} alt="Jante Legende" style={{ width: "10em" }} />
                 </div>
             </section>
