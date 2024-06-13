@@ -36,23 +36,28 @@ function ColorChange() {
     return (
         <>
             <section id="configuration">
+
                 {selectedModel && changeColor && (
                     <Carousel fade>
                         {colorImages.map((image, index) => (
+
                             <Carousel.Item key={index}>
-                                <img src={image} alt={`${selectedModel} ${ColorChange} ${index + 1}`} />
+                                <img src={image} alt={`${selectedModel} ${changeColor} ${index + 1}`} />
                                 <Carousel.Caption>
-                                    <h3>{`${selectedModel} - ${ColorChange}`}</h3>
+                                    <h3>{`${selectedModel} - ${changeColor}`}</h3>
                                 </Carousel.Caption>
                             </Carousel.Item>
                         ))}
                     </Carousel>
                 )}
-                <div>
-                    <Button onClick={() => handleColorSelect('Blanc Opaque')}>Select Blanc</Button>
-                    <Button onClick={() => handleColorSelect('Bleu Alpine')}>Select Bleu</Button>
-                    <Button onClick={() => handleColorSelect('Noir Profond')}>Select Noir</Button>
-                </div>
+
+                <Button onClick={() => handleColorSelect('Blanc Opaque')}>Select Blanc</Button>
+                <img src={Blanc} alt="Blanc Alpine" style={{ width: "10em" }} />
+                <Button onClick={() => handleColorSelect('Bleu Alpine')}>Select Bleu</Button>
+                <img src={Bleu} alt="Bleu Alpine" style={{ width: "10em" }} />
+                <Button onClick={() => handleColorSelect('Noir Profond')}>Select Noir</Button>
+                <img src={Noir} alt="Noir Alpine" style={{ width: "10em" }} />
+
             </section>
         </>
     );
