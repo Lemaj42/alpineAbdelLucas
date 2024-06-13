@@ -4,6 +4,7 @@ import "./CSS/configurator.css";
 import { Button } from "react-bootstrap";
 import SelectVersion from "../Components/configurators/Version";
 import ColorChange from '../Components/configurators/Couleurs';
+import Jantes from "../Components/configurators/Jantes";
 
 
 function Configurators() {
@@ -29,12 +30,11 @@ function Configurators() {
             <section id="configuration">
                 {pageIndex === 0 && <SelectVersion />}
                 {pageIndex === 1 && <ColorChange />}
-
-                
-                <Button onClick={changePageMoins}>Passez à l'étape Précedente</Button>
-                <Button onClick={changePagePlus}>Passez à l'étape suivante</Button>
-
-
+                {pageIndex === 2 && <Jantes />}
+                <div className="d-flex justify-content-around">
+                    <Button onClick={changePageMoins} style={{ backgroundColor: "#005A9C" }}>Passez à l'étape Précédente</Button>
+                    <Button onClick={changePagePlus} style={{ backgroundColor: "#005A9C" }}>Passez à l'étape suivante</Button>
+                </div>
             </section>
         </>
     );
